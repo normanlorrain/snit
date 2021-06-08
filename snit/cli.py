@@ -1,12 +1,12 @@
 import click
 
 
-@click.command()
-@click.argument("number", type=int)
-def cli(number: int):
-    click.echo(
-        "{} has become {}!".format(
-            click.style(number, bold=True),
-            click.style(number+10, bold=True, fg="green"),
-        )
-    )
+@click.group()
+@click.option('--debug/--no-debug', default=False)
+def cli(debug):
+    click.echo(f"Debug mode is {'on' if debug else 'off'}")
+
+
+@cli.command()  # @cli, not @click!
+def backup():
+    click.echo("backup")
