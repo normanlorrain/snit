@@ -1,4 +1,6 @@
+import os
 
+snit_dir = None
 
 
 def backup():
