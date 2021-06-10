@@ -8,6 +8,7 @@ from . import archive
 @click.option(
     "--directory",
     envvar="SNIT_DIR",
+    help="directory to store settings.  Can be set with the SNIT_DIR environment variable.",
 )
 def cli(directory):
     # click.echo(f"Debug mode is {'on' if debug else 'off'}")
@@ -25,5 +26,11 @@ def cli(directory):
 
 @cli.command()  # @cli, not @click!
 def backup():
+    click.echo("backup")
+    archive.backup(Path.cwd() / Path(".vscode"))
+
+
+@cli.command()  # @cli, not @click!
+def list():
     click.echo("backup")
     archive.backup(Path.cwd() / Path(".vscode"))
