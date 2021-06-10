@@ -19,7 +19,9 @@ def cli(directory):
             "Must specify directory, either on command line or environment variable"
         )
 
-    archive._archive_dir = snit_dir / archive.createBackupFolderName(Path.cwd())
+    archive._archive_dir = (
+        snit_dir / archive.createBackupFolderName(Path.cwd()) / Path("vscode")
+    )
 
     pass
 
