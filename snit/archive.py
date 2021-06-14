@@ -20,9 +20,11 @@ def createBackupFolderName(path: Path):
 
 
 def backup(source_path: Path):
-    if not _archive_dir.exists():
-        _archive_dir.mkdir(parents=True, exist_ok=True)
+    _archive_dir.mkdir(parents=True, exist_ok=True)
 
+    # Backups are numbered, e.g. foo.bar becomes foo.1.bar, subsequent backup creates foo.2.bar, etc
+    # For each file to be archived, look for all the backups
+    # Get the latest one if it exists, and check if it has changed before creating a new version.
     for source_file in source_path.iterdir():
         backups = sorted(_archive_dir.glob(f"{source_file.stem}*{source_file.suffix}"))
         if len(backups):
@@ -37,8 +39,6 @@ def backup(source_path: Path):
         backupFile = _archive_dir / backup_name
         shutil.copyfile(source_file, backupFile)
         click.echo(f"{source_file.name}: saved")
-
-    pass
 
 
 def restore():
