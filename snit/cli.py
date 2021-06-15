@@ -34,5 +34,5 @@ def backup():
 
 @cli.command()  # @cli, not @click!
 def list():
-    click.echo("backup")
-    archive.backup(Path.cwd() / Path(".vscode"))
+    click.echo("list")
+    archive.list(Path.cwd() / Path(".vscode"))
