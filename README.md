@@ -30,20 +30,21 @@ Git, Hg, etc. seem too heavy.
 ## Usage
     $ snit [OPTIONS] COMMAND
 
-### Options:
--  `-a, --archive PATH      `  Specify the directory for the archive.  Can be set with the `SNIT_DIR` environment variable.  [required]
--  `--help                  ` Show this message and exit.
+    Options:
+       -a, --archive PATH    Specify the directory for the archive.  Can be set with
+                             the SNIT_DIR environment variable.  [required]
+       --help                Show this message and exit.
 
-### Commands:
-  `backup`  Backup editor settings.  
-  `list  `  List any found backups.  
+    Commands:
+        backup  Backup editor settings.  
+        list    List any found backups.  
 
 ## Example:
-(Windows)
+(Windows, with `SNIT_DIR` set)
 
-    `D:\Code\MyBigProject>snit backup`
+    D:\Code\MyBigProject>snit backup
 
 Copies workspace settings to `$SNIT_DIR\D__Code_MyBigProject\vscode`
 
 ## ToDo
-Test under Unix.
+Verify Unix compatibility.
