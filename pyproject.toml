@@ -1,8 +1,14 @@
 [tool.poetry]
 name = "snit"
-version = "0.1.0"
-description = ""
+version = "0.1.1"
+description = "Python command line application to backup IDE / code editor settings. "
 authors = ["Norman Lorrain <normanlorrain@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/normanlorrain/snit"
+classifiers = [
+    "Topic :: Software Development"
+]
 
 [tool.poetry.dependencies]
 python = "^3.9"
